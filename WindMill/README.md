@@ -33,7 +33,40 @@ Here you can see the SDK for Node.JS and Cloudant No SQL Service that come as a 
 *You will land up on the 'Start coding with Internet of Things' page. The instructions on this page are to get familiar with Cloud Foundry command line interface to control your application. You can go through the steps and try them out at leisure. We won't be needing that for our app right now.*
 
 * On the left panel, click on __Overview__. This is the overview of your Application showing the link to go to the App, status of the app, instances, memory and the services bound to it.
-* We want to bind the DashDB service to the App. Lets click on the ADD A SERVICE OR API button.
+* We want to bind the DashDB service to the App. Lets click on the __ADD A SERVICE OR API__ button.
 * Search for DashDB in the search tab or select the dashDB service in the Big Data section.
-* In the right hand side panel, the App name would be pre-filled and the service name would be randomly generated. The selected plan should be defaulted to Entry plan. Click CREATE.
-* The App would be required to RESTAGE. Your DashDB service is now bound with the Node-RED App and it should show up on the App Overview page.
+* In the right hand side panel, the App name would be pre-filled and the service name would be randomly generated. The selected plan should be defaulted to Entry plan. Click __CREATE__.
+* The App would be required to __RESTAGE__. Your DashDB service is now bound with the Internet of Things App and it should show up on the App Overview page.
+
+#### We are done with the setup of the Internet of Things app and the DashDB service.
+
+## 4. Let's create our Node-RED flow!
+#### A little homework on the DashDB side
+We need to create a table in our DashDB for storing the data for our App. Lets get that done quickly.
+
+* On the overview page, click on the DashDB service block in the services section. Further, click on the __LAUNCH__ button on the upper right corner of the page. This will open up the DashDB console in a new tab.
+* Click on Tables on the left panel. Then Click on Add Tables.
+* A pop up will open. Add below statement in the text area
+
+            CREATE TABLE TABLENAME
+                        (
+                        SPEED INTEGER,
+                        DIRECTION INTEGER,  
+                        TIME BIGINT
+                        );
+
+*Use some unique table name for the table*
+
+* Click on Run DDL.
+
+#### The Node-RED flow
+
+* From the App overview page, click on the link next to __Routes__ right beneath the App name.
+* This will land you on the Node-RED in BlueMix page. Click on the red button "Go to your Node-RED flow editor".
+
+*The left panel of this page includes all the different nodes available for direct use to plug and play within your flow structures. The main area called the 'sheet' is where you pull in the nodes and connect them to each other to make a functional app. On the right panel, 'info' displays the information about a particular node when selected and the 'debug' tab is the space where we validate and visualize the state of data flowing at any time within the flow.*
+
+* Click on (Picture ) to Add a New Sheet
+* On the top right corner, click the icon: (picture) and select Import > Clipboard
+* In the textbox, paste the content of the file CandidatesApp_Import_Sheet1.txt in the folder files of this project. Click Ok
+*<IMAGE>
