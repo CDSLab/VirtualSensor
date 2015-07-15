@@ -72,7 +72,7 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 * This imports the ready-to-use flow structure that you can use for this App.
 
 
-### *Set the DashDb Configurations
+### * Set the DashDb Configurations
 
 * Double click the node "DASH103482". Add details of your dashDB instantce. 
 ## picture of DashDB.
@@ -80,4 +80,6 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 * In the debug panel on the right, you would start seeing the Speed, Direction and Time data coming from __Virtual Sensor__.
 * Go back to the DashDB console and validate the records being inserted into the table we created. 
 
-
+## 5. Time to see the results.
+* Open a new tab. Log on to "Your App name".mybluemix.net/app
+* You will app as shown below. The wind turbine is changing its direction as of wind is changing.
