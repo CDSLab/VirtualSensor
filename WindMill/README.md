@@ -68,5 +68,16 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 
 * Click on (Picture ) to Add a New Sheet
 * On the top right corner, click the icon: (picture) and select Import > Clipboard
-* In the textbox, paste the content of the file CandidatesApp_Import_Sheet1.txt in the folder files of this project. Click Ok
-*<IMAGE>
+* In the textbox, paste the content of the file WindMill.txt in the folder files of this project. Click Ok.
+* This imports the ready-to-use flow structure that you can use for this App.
+
+
+### *Set the DashDb Configurations
+
+* Double click the node "DASH103482". Add details of your dashDB instantce. 
+## picture of DashDB.
+* Click __Deploy__
+* In the debug panel on the right, you would start seeing the Speed, Direction and Time data coming from __Virtual Sensor__.
+* Go back to the DashDB console and validate the records being inserted into the table we created. 
+
+
