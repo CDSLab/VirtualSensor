@@ -66,8 +66,8 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 
 *The left panel of this page includes all the different nodes available for direct use to plug and play within your flow structures. The main area called the 'sheet' is where you pull in the nodes and connect them to each other to make a functional app. On the right panel, 'info' displays the information about a particular node when selected and the 'debug' tab is the space where we validate and visualize the state of data flowing at any time within the flow.*
 
-* Click on (Picture ) to Add a New Sheet
-* On the top right corner, click the icon: (picture) and select Import > Clipboard
+* Click on ##+ to Add a New Sheet
+* On the top right corner, click the icon: ![alttext](https://github.com/CDSLab/VirtualSensor/tree/master/WindMill/Imagesicon.png) and select Import > Clipboard
 * In the textbox, paste the content of the file WindMill.txt in the folder files of this project. Click Ok.
 * This imports the ready-to-use flow structure that you can use for this App.
 
