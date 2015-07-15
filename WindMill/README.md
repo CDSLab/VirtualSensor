@@ -68,7 +68,7 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 
 * Click on plus sign to Add a New Sheet
 * On the top right corner, click the icon: 
-* ![alt text](https://github.com/CDSLab/VirtualSensor/tree/master/WindMill/Images/icon.png "I") and select Import > Clipboard
+* ![Alt Text](Images/icon.png "I") and select Import > Clipboard
 * In the textbox, paste the content of the file WindMill.txt in the folder files of this project. Click Ok.
 * This imports the ready-to-use flow structure that you can use for this App.
 
