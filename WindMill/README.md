@@ -50,7 +50,9 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 * Click on Tables on the left panel. Then Click on Add Tables.
 * A pop up will open. Add below statement in the text area
 ![Alt Text](Images/Createtable.png)
-*Use some unique table name for the table*
+
+
+## *Make sure you use some unique name while creating table*
 
 * Click on Run DDL.
 
