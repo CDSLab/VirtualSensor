@@ -8,7 +8,7 @@
 ### What is our App?
 Wind is common and renewable source of energy. With the global growth of wind energy industry, if we can optimize the the production of energy with Internet of things, we can optimize and increase the production of energy. We have used the internet of things to develop a prototypre which can optimize the production of energy usind Wind energy.
 
-### The app requires Internet of Things boilerplate and DashDB service from Bluemix. Internet of things boilerplate use Node-Red
+#### The app requires Internet of Things boilerplate and DashDB service from Bluemix. Internet of things boilerplate use Node-Red
 
 A quick introduction to [Node-RED] (http://nodered.org/) would be handy. Nevertheless, we can pick the skills on the go.
 
@@ -24,6 +24,7 @@ A quick introduction to [Node-RED] (http://nodered.org/) would be handy. Neverth
 *This page lists all kinds of different boilerplates, runtimes and services that are offered by Bluemix. Browsing through this page can give you an idea about all the exciting features offered by Bluemix.*
 
 * From the Boilerplates section, select the _Internet of Things_ starter boilerplate.
+![Alt Text](Images/Boilerplate.png)
 
 Here you can see the SDK for Node.JS and Cloudant No SQL Service that come as a part of the Internet of Things boilerplate. For our app, we are not going to use these bundled services. Instead we will bind our own DashDB service.
 
@@ -35,26 +36,20 @@ Here you can see the SDK for Node.JS and Cloudant No SQL Service that come as a 
 * On the left panel, click on __Overview__. This is the overview of your Application showing the link to go to the App, status of the app, instances, memory and the services bound to it.
 * We want to bind the DashDB service to the App. Lets click on the __ADD A SERVICE OR API__ button.
 * Search for DashDB in the search tab or select the dashDB service in the Big Data section.
+![Alt Text](Images/DashDB.png)
 * In the right hand side panel, the App name would be pre-filled and the service name would be randomly generated. The selected plan should be defaulted to Entry plan. Click __CREATE__.
 * The App would be required to __RESTAGE__. Your DashDB service is now bound with the Internet of Things App and it should show up on the App Overview page.
 
 #### We are done with the setup of the Internet of Things app and the DashDB service.
 
 ## 4. Let's create our Node-RED flow!
-#### A little homework on the DashDB side
+#### Create Table in DashDB
 We need to create a table in our DashDB for storing the data for our App. Lets get that done quickly.
 
 * On the overview page, click on the DashDB service block in the services section. Further, click on the __LAUNCH__ button on the upper right corner of the page. This will open up the DashDB console in a new tab.
 * Click on Tables on the left panel. Then Click on Add Tables.
 * A pop up will open. Add below statement in the text area
-
-            CREATE TABLE TABLENAME
-                        (
-                        SPEED INTEGER,
-                        DIRECTION INTEGER,  
-                        TIME BIGINT
-                        );
-
+![Alt Text](Images/Createtable.png)
 *Use some unique table name for the table*
 
 * Click on Run DDL.
@@ -67,16 +62,15 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 *The left panel of this page includes all the different nodes available for direct use to plug and play within your flow structures. The main area called the 'sheet' is where you pull in the nodes and connect them to each other to make a functional app. On the right panel, 'info' displays the information about a particular node when selected and the 'debug' tab is the space where we validate and visualize the state of data flowing at any time within the flow.*
 
 * Click on plus sign to Add a New Sheet
-* On the top right corner, click the icon: 
-* ![Alt Text](Images/icon.png "I") and select Import > Clipboard
+* On the top right corner, click the icon: ![Alt Text](Images/icon.png ) and select Import > Clipboard
 * In the textbox, paste the content of the file WindMill.txt in the folder files of this project. Click Ok.
 * This imports the ready-to-use flow structure that you can use for this App.
+![Alt Text](Images/NodeRed.png)
 
+###  Set the DashDb Configurations
 
-### * Set the DashDb Configurations
-
-* Double click the node "DASH103482". Add details of your dashDB instantce. 
-## picture of DashDB.
+* Double click the node "DASH103482". Add details "Schema.TableName" of your dashDB instantce. 
+![Alt Text](Images/dashDBDetails.png)
 * Click __Deploy__
 * In the debug panel on the right, you would start seeing the Speed, Direction and Time data coming from __Virtual Sensor__.
 * Go back to the DashDB console and validate the records being inserted into the table we created. 
@@ -84,3 +78,4 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 ## 5. Time to see the results.
 * Open a new tab. Log on to "Your App name".mybluemix.net/app
 * You will app as shown below. The wind turbine is changing its direction as of wind is changing.
+![Alt Text](Images/application.png)
